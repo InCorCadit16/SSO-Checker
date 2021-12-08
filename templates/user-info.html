@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ provider }} User Info
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <img src="{{ user_info.picture }}" alt="" width="100" height="100">
+    </div>
+    <div class="col-md-10 social-container my-2">
+      {% for prop in user_info %}
+      <p>{{ prop }}: {{ user_info[prop] }}</p>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="row mx-auto mt-4">
+    <button class="btn btn-danger">
+      <a href="/">Logout</a>
+    </button>
+  </div>
+{% endblock %}
